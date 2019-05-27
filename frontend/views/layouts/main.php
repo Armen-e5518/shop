@@ -9,6 +9,12 @@ use yii\helpers\Html;
 
 
 AppAsset::register($this);
+$categories = \common\models\Categories::find()->all();
+$cook = \Yii::$app->request->cookies->get('favorites');
+$carts = \Yii::$app->request->cookies->get('carts');
+$cook_count = $cook ? count($cook->value) : 0;
+$carts_count = $carts ? count($carts->value) : 0;
+$carts = $carts ? $carts->value : [];
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -16,6 +22,7 @@ AppAsset::register($this);
 <head>
    <meta charset="<?= Yii::$app->charset ?>">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="icon" type="image/png" href="/favicon.png"/>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
    <!-- Google font -->
@@ -65,7 +72,7 @@ AppAsset::register($this);
             <!-- LOGO -->
             <div class="col-md-3">
                <div class="header-logo">
-                  <a href="#" class="logo">
+                  <a href="/" class="logo">
                      <img src="/main/img/logo.png" alt="">
                   </a>
                </div>
@@ -75,15 +82,19 @@ AppAsset::register($this);
             <!-- SEARCH BAR -->
             <div class="col-md-6">
                <div class="header-search">
-                  <form>
-                     <select class="input-select">
-                        <option value="0">All Categories</option>
-                        <option value="1">Category 01</option>
-                        <option value="1">Category 02</option>
-                     </select>
-                     <input class="input" placeholder="Search here">
-                     <button class="search-btn">Search</button>
-                  </form>
+                  <?php $form = \yii\widgets\ActiveForm::begin([
+                     'action' => '/site/store',
+                     'method' => 'get',
+                  ]); ?>
+                  <select class="input-select" name="ProductsSearchStore[categories][]">
+                     <option value="0">All Categories</option>
+                     <?php foreach ($categories as $category): ?>
+                        <option value="<?= $category->id ?>"><?= $category->name ?></option>
+                     <?php endforeach; ?>
+                  </select>
+                  <input class="input" value="<?= $this->params['word']; ?>" name="ProductsSearchStore[word]" placeholder="Search here">
+                  <button class="search-btn">Search</button>
+                  <?php \yii\widgets\ActiveForm::end(); ?>
                </div>
             </div>
             <!-- /SEARCH BAR -->
@@ -96,7 +107,7 @@ AppAsset::register($this);
                      <a href="#">
                         <i class="fa fa-heart-o"></i>
                         <span>Your Wishlist</span>
-                        <div class="qty">2</div>
+                        <div class="qty" id="fav_count"><?= $cook_count ?></div>
                      </a>
                   </div>
                   <!-- /Wishlist -->
@@ -106,35 +117,33 @@ AppAsset::register($this);
                      <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                         <i class="fa fa-shopping-cart"></i>
                         <span>Your Cart</span>
-                        <div class="qty">3</div>
+                        <div class="qty" id="carts_id"><?= $carts_count ?></div>
                      </a>
                      <div class="cart-dropdown">
-                        <div class="cart-list">
-                           <div class="product-widget">
-                              <div class="product-img">
-                                 <img src="/main/img/product01.png" alt="">
-                              </div>
-                              <div class="product-body">
-                                 <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                 <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-                              </div>
-                              <button class="delete"><i class="fa fa-close"></i></button>
-                           </div>
-
-                           <div class="product-widget">
-                              <div class="product-img">
-                                 <img src="/main/img/product02.png" alt="">
-                              </div>
-                              <div class="product-body">
-                                 <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                 <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-                              </div>
-                              <button class="delete"><i class="fa fa-close"></i></button>
-                           </div>
+                        <div class="cart-list" id="cart-list">
+                           <?php if (!empty($carts)): ?>
+                              <?php foreach ($carts as $cart):
+                                 $model = \common\models\Products::findOne($cart['id']);
+                                 $img = \common\models\ProductImages::GetOan($cart['id'])->img;
+                                 ?>
+                                 <div class="product-widget" data-id="<?= $cart['id'] ?>">
+                                    <div class="product-img">
+                                       <img src="/admin/uploads/<?= $img ?>" alt="">
+                                    </div>
+                                    <div class="product-body">
+                                       <h3 class="product-name"><a href="/site/view?id=<?= $model->id ?>"><?= $model->name ?></a></h3>
+                                       <h4 class="product-price" data-price="<?= $model->price ?>">
+                                          <span class="qty"><span class="product_count"><?= $cart['count'] ?></span>x</span>$<?= $model->price ?>.00
+                                       </h4>
+                                    </div>
+                                    <button class="delete remove_cart" data-id="<?= $model->id ?>"><i class="fa fa-close"></i></button>
+                                 </div>
+                              <?php endforeach; ?>
+                           <?php endif; ?>
                         </div>
                         <div class="cart-summary">
-                           <small>3 Item(s) selected</small>
-                           <h5>SUBTOTAL: $2940.00</h5>
+                           <small><span class="item-count"></span> Item(s) selected</small>
+                           <h5>SUBTOTAL: $<span class="total-price"></span>.00</h5>
                         </div>
                         <div class="cart-btns">
                            <a href="#">View Cart</a>
@@ -171,13 +180,13 @@ AppAsset::register($this);
       <div id="responsive-nav">
          <!-- NAV -->
          <ul class="main-nav nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Hot Deals</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Laptops</a></li>
-            <li><a href="#">Smartphones</a></li>
-            <li><a href="#">Cameras</a></li>
-            <li><a href="#">Accessories</a></li>
+            <li class="<?= $this->params['menu'] == 'home' ? 'active' : '' ?>"><a href="/">Home</a></li>
+            <li class="<?= $this->params['menu'] == 'shop' ? 'active' : '' ?>"><a href="/site/store">Shop</a></li>
+            <!--            <li><a href="#">Categories</a></li>-->
+            <!--            <li><a href="#">Laptops</a></li>-->
+            <!--            <li><a href="#">Smartphones</a></li>-->
+            <!--            <li><a href="#">Cameras</a></li>-->
+            <!--            <li><a href="#">Accessories</a></li>-->
          </ul>
          <!-- /NAV -->
       </div>

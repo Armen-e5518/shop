@@ -1,0 +1,40 @@
+.store-pagination li.active a {
+    color: #FFF;
+}
+
+.search-btn {
+    width: 160px;
+    height: 40px;
+    font-weight: 700;
+    background: #D10024;
+    color: #FFF;
+    border: none;
+}
+
+.s-block {
+    text-align: center;
+    display: flex;
+    padding: 7%;
+}
+
+.s-block a {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: #333;
+    background: #fbfbfc;
+    border: 2px solid #E4E7ED;
+    padding: 7px 6px;
+}
+
+.s-block button, .s-block a {
+    margin: 1%;
+}
+
+.store .product-img {
+    height: 264px;
+    overflow: hidden;
+}
+.product-name{
+    height: 45px;
+}

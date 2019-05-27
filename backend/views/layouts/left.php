@@ -14,6 +14,8 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
+                    ['label' => 'Products', 'icon' => 'file-code-o', 'url' => ['/products']],
+                    ['label' => 'Categories', 'icon' => 'file-code-o', 'url' => ['/categories']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                 ],
             ]

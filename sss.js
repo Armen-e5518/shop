@@ -1,0 +1,1 @@
+$('#ember1082 ul li .js-discover-person-card__action-btn').trigger('click')

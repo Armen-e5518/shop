@@ -3,6 +3,8 @@
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
+$this->params['menu'] = 'home';
+$this->params['word'] = '';
 ?>
 
 <!-- SECTION -->
