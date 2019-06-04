@@ -154,7 +154,7 @@ $this->params['menu'] = 'shop';
                      </div>
                      <div class="product-body">
                         <p class="product-category">Category</p>
-                        <h3 class="product-name"><a href="#"><?= $top->name ?></a></h3>
+                        <h3 class="product-name"><a href="/site/view?id=<?= $top->id ?>"><?= $top->name ?></a></h3>
                         <h4 class="product-price">$<?= $top->price ?>.00
                            <del class="product-old-price">$<?= $top->big_price ?>.00</del>
                         </h4>
@@ -204,8 +204,14 @@ $this->params['menu'] = 'shop';
                            <div class="product-img">
                               <img src="/admin/uploads/<?= $img->img ?>" alt="">
                               <div class="product-label">
-                                 <span class="sale">-30%</span>
-                                 <span class="new">NEW</span>
+                                 <?php if ($product->state == 1): ?>
+                                    <span class="sale">-30%</span>
+                                 <?php elseif ($product->state == 2): ?>
+                                    <span class="new">NEW</span>
+                                 <?php elseif ($product->state == 3): ?>
+                                    <span class="sale">-30%</span>
+                                    <span class="new">NEW</span>
+                                 <?php endif; ?>
                               </div>
                            </div>
                            <div class="product-body">
@@ -227,11 +233,12 @@ $this->params['menu'] = 'shop';
                                  <button class="add-to-wishlist add_fav" data-id="<?= $product->id ?>">
                                     <?php if (in_array($product->id, $favorites)): ?>
                                        <i class="fa fa-heart"></i>
+                                       <span class="tooltipp">remove from wishlist</span>
                                     <?php else: ?>
                                        <i class="fa fa-heart-o"></i>
+                                       <span class="tooltipp">add to wishlist</span>
                                     <?php endif; ?>
-                                    <span
-                                        class="tooltipp">add to wishlist</span></button>
+                                 </button>
                                  <!--                                 <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
                                  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
                               </div>
@@ -266,39 +273,7 @@ $this->params['menu'] = 'shop';
 <!-- /SECTION -->
 
 <!-- NEWSLETTER -->
-<div id="newsletter" class="section">
-   <!-- container -->
-   <div class="container">
-      <!-- row -->
-      <div class="row">
-         <div class="col-md-12">
-            <div class="newsletter">
-               <p>Sign Up for the <strong>NEWSLETTER</strong></p>
-               <form>
-                  <input class="input" type="email" placeholder="Enter Your Email">
-                  <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-               </form>
-               <ul class="newsletter-follow">
-                  <li>
-                     <a href="#"><i class="fa fa-facebook"></i></a>
-                  </li>
-                  <li>
-                     <a href="#"><i class="fa fa-twitter"></i></a>
-                  </li>
-                  <li>
-                     <a href="#"><i class="fa fa-instagram"></i></a>
-                  </li>
-                  <li>
-                     <a href="#"><i class="fa fa-pinterest"></i></a>
-                  </li>
-               </ul>
-            </div>
-         </div>
-      </div>
-      <!-- /row -->
-   </div>
-   <!-- /container -->
-</div>
+<?=$this->render('/layouts/newsletter')?>
 <!-- /NEWSLETTER -->
 <script>
    var _From = <?=$search->price_from?>;

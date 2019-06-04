@@ -12,9 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="products-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <p>
         <?= Html::a('Create Products', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
@@ -36,7 +33,19 @@ $this->params['breadcrumbs'][] = $this->title;
             //'state',
             //'views',
             //'buy_count',
-
+           [
+              'attribute' => 'Products',
+              'format' => 'html',
+              'value' => function ($data) {
+                 $imgs= \common\models\ProductImages::GetImgs($data->id);
+                 $s = '';
+                 foreach ($imgs as $k=>$img) {
+                    ++$k;
+                    $s .= "<img width='50px' src='/admin/uploads/$img->img'</img>";
+                 }
+                 return $s;
+              },
+           ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

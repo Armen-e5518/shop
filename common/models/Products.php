@@ -58,6 +58,7 @@ class Products extends \yii\db\ActiveRecord
    public function upload($id)
    {
       if ($this->validate()) {
+         ProductImages::deleteAll(['product_id' => $id]);
          foreach ($this->imageFiles as $file) {
             $name = md5(microtime(true)) . '.' . $file->extension;
             $file->saveAs('uploads/' . $name);

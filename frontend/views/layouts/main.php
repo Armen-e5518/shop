@@ -56,9 +56,9 @@ $carts = $carts ? $carts->value : [];
    <div id="top-header">
       <div class="container">
          <ul class="header-links pull-left">
-            <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-            <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-            <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+            <li><a href="tel:+37494322396"><i class="fa fa-phone"></i>+37494-32-23-96</a></li>
+            <li><a href="mailto:armen5518@gmail.com"><i class="fa fa-envelope-o"></i>armen5518@gmail.com</a></li>
+            <li><a target="_blank" href="https://www.google.com/maps/place/%D0%9E%D0%BF%D0%B5%D1%80%D0%BD%D1%8B%D0%B9+%D1%82%D0%B5%D0%B0%D1%82%D1%80/@40.1860722,44.5162101,18z/data=!4m5!3m4!1s0x406abce217b8839d:0x80bc65ebce1f70f!8m2!3d40.1858221!4d44.5150673"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
          </ul>
       </div>
    </div>
@@ -103,8 +103,8 @@ $carts = $carts ? $carts->value : [];
             <div class="col-md-3 clearfix">
                <div class="header-ctn">
                   <!-- Wishlist -->
-                  <div>
-                     <a href="#">
+                  <div id="Wishlist">
+                     <a href="/site/wish-list">
                         <i class="fa fa-heart-o"></i>
                         <span>Your Wishlist</span>
                         <div class="qty" id="fav_count"><?= $cook_count ?></div>
@@ -114,7 +114,7 @@ $carts = $carts ? $carts->value : [];
 
                   <!-- Cart -->
                   <div class="dropdown">
-                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                     <a class="dropdown-toggle" id="cart-cont" data-toggle="dropdown" aria-expanded="true">
                         <i class="fa fa-shopping-cart"></i>
                         <span>Your Cart</span>
                         <div class="qty" id="carts_id"><?= $carts_count ?></div>
@@ -146,8 +146,8 @@ $carts = $carts ? $carts->value : [];
                            <h5>SUBTOTAL: $<span class="total-price"></span>.00</h5>
                         </div>
                         <div class="cart-btns">
-                           <a href="#">View Cart</a>
-                           <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+                           <a href="/site/carts-list">View Cart</a>
+                           <a href="/site/checkout">Checkout <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                      </div>
                   </div>
@@ -209,9 +209,9 @@ $carts = $carts ? $carts->value : [];
                   <h3 class="footer-title">About Us</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
                   <ul class="footer-links">
-                     <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-                     <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-                     <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+                     <li><a href="tel:+37494322396"><i class="fa fa-phone"></i>+37494-32-23-96</a></li>
+                     <li><a href="mailto:armen5518@gmail.com"><i class="fa fa-envelope-o"></i>armen5518@gmail.com</a></li>
+                     <li><a target="_blank" href="https://www.google.com/maps/place/%D0%9E%D0%BF%D0%B5%D1%80%D0%BD%D1%8B%D0%B9+%D1%82%D0%B5%D0%B0%D1%82%D1%80/@40.1860722,44.5162101,18z/data=!4m5!3m4!1s0x406abce217b8839d:0x80bc65ebce1f70f!8m2!3d40.1858221!4d44.5150673"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
                   </ul>
                </div>
             </div>
@@ -220,11 +220,11 @@ $carts = $carts ? $carts->value : [];
                <div class="footer">
                   <h3 class="footer-title">Categories</h3>
                   <ul class="footer-links">
-                     <li><a href="#">Hot deals</a></li>
-                     <li><a href="#">Laptops</a></li>
-                     <li><a href="#">Smartphones</a></li>
-                     <li><a href="#">Cameras</a></li>
-                     <li><a href="#">Accessories</a></li>
+                     <li><a href="/site/store">Hot deals</a></li>
+                     <li><a href="/site/store?ProductsSearchStore%5Bcategories%5D%5B%5D=1">Laptops</a></li>
+                     <li><a href="/site/store?ProductsSearchStore%5Bcategories%5D%5B%5D=2">Smartphones</a></li>
+                     <li><a href="/site/store?ProductsSearchStore%5Bcategories%5D%5B%5D=3">Cameras</a></li>
+                     <li><a href="/site/store?ProductsSearchStore%5Bcategories%5D%5B%5D=4">Accessories</a></li>
                   </ul>
                </div>
             </div>
@@ -235,11 +235,11 @@ $carts = $carts ? $carts->value : [];
                <div class="footer">
                   <h3 class="footer-title">Information</h3>
                   <ul class="footer-links">
-                     <li><a href="#">About Us</a></li>
-                     <li><a href="#">Contact Us</a></li>
-                     <li><a href="#">Privacy Policy</a></li>
-                     <li><a href="#">Orders and Returns</a></li>
-                     <li><a href="#">Terms & Conditions</a></li>
+                     <li><a href="/site/about">About Us</a></li>
+                     <li><a href="/site/contact">Contact Us</a></li>
+                     <li><a href="/site/policy">Privacy Policy</a></li>
+                     <li><a href="/">Orders and Returns</a></li>
+                     <li><a href="/">Terms & Conditions</a></li>
                   </ul>
                </div>
             </div>
@@ -248,11 +248,9 @@ $carts = $carts ? $carts->value : [];
                <div class="footer">
                   <h3 class="footer-title">Service</h3>
                   <ul class="footer-links">
-                     <li><a href="#">My Account</a></li>
-                     <li><a href="#">View Cart</a></li>
-                     <li><a href="#">Wishlist</a></li>
-                     <li><a href="#">Track My Order</a></li>
-                     <li><a href="#">Help</a></li>
+                     <li><a href="/site/carts-list">View Cart</a></li>
+                     <li><a href="/site/wish-list">Wishlist</a></li>
+                     <li><a href="/site/help">Help</a></li>
                   </ul>
                </div>
             </div>
@@ -294,6 +292,7 @@ $carts = $carts ? $carts->value : [];
 <!-- /FOOTER -->
 <!-- jQuery Plugins -->
 <script src="/main/js/jquery.min.js"></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 <script src="/main/js/bootstrap.min.js"></script>
 <script src="/main/js/slick.min.js"></script>
 <script src="/main/js/nouislider.min.js"></script>

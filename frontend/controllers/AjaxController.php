@@ -33,15 +33,14 @@ class AjaxController extends Controller
             $cookies_request = \Yii::$app->request->cookies;
             $cookies_response = \Yii::$app->response->cookies;
             $value = [];
+            $cookie = $cookies_request->get('favorites');
             $action = 'Add';
-            if (($cookie = $cookies_request->get('favorites')) !== null) {
-               $value = (array)$cookie->value;
-               if (($key = array_search($post['id'], $value)) !== false) {
-                  unset($value[$key]);
-                  $action = 'Remove';
-               } else {
-                  array_push($value, $post['id']);
-               }
+            $value = $cookie ? (array)$cookie->value : [];
+            if (($key = array_search($post['id'], $value)) !== false) {
+               unset($value[$key]);
+               $action = 'Remove';
+            } else {
+               array_push($value, $post['id']);
             }
             $cookies_response->add(new \yii\web\Cookie([
                'name' => 'favorites',
@@ -69,12 +68,12 @@ class AjaxController extends Controller
                unset($value[$key]);
                array_push($value, [
                   'id' => $post['id'],
-                  'count' => $temp['count'] + 1
+                  'count' => $temp['count'] + $post['count']
                ]);
             } else {
                array_push($value, [
                   'id' => $post['id'],
-                  'count' => 1
+                  'count' => $post['count']
                ]);
             }
 
@@ -90,6 +89,7 @@ class AjaxController extends Controller
          'img' => ProductImages::GetOan($post['id'])->img,
       ];
    }
+
    public function actionRemoveCart()
    {
       if (Yii::$app->request->isAjax) {
@@ -115,6 +115,7 @@ class AjaxController extends Controller
          'action' => $action,
       ];
    }
+
    function Filter($array, $id)
    {
       foreach ($array as $k => $a) {

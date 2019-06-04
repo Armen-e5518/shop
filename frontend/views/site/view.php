@@ -17,7 +17,7 @@ $this->params['menu'] = 'shop';
             <ul class="breadcrumb-tree">
                <li><a href="/">Home</a></li>
                <li><a href="/site/store">All Categories</a></li>
-               <li class="active">Product</li>
+               <li class="active"><?= \common\models\Categories::GetName($product->category_id) ?></li>
             </ul>
          </div>
       </div>
@@ -100,22 +100,30 @@ $this->params['menu'] = 'shop';
                   <div class="qty-label">
                      Qty
                      <div class="input-number">
-                        <input type="number" value="1">
+                        <input type="number" id="id_p_count" value="1">
                         <span class="qty-up">+</span>
                         <span class="qty-down">-</span>
                      </div>
                   </div>
-                  <button class="add-to-cart-btn add_cart" data-id ="<?=$product->id?>"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                  <button class="add-to-cart-btn add_cart" data-id="<?= $product->id ?>"><i class="fa fa-shopping-cart"></i> add to cart</button>
                </div>
 
                <ul class="product-btns">
-                  <li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
-                  <!--                  <li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>-->
+                  <li>
+                     <a href="#" class="add_fav" data-id="<?= $product->id ?>">
+                        <?php if (in_array($product->id, $favorites)): ?>
+                           <i class="fa fa-heart"></i>
+                           <span class="tooltipp">remove from wishlist</span>
+                        <?php else: ?>
+                           <i class="fa fa-heart-o"></i>
+                           <span class="tooltipp">add to wishlist</span>
+                        <?php endif; ?>
+                     </a>
+                  </li>
                </ul>
-
                <ul class="product-links">
                   <li>Category:</li>
-                  <li><a href="#"><?= \common\models\Categories::GetName($product->category_id) ?></a></li>
+                  <li><a href="/site/store?ProductsSearchStore%5Bcategories%5D%5B%5D=<?=$product->category_id?>"><?= \common\models\Categories::GetName($product->category_id) ?></a></li>
                </ul>
 
                <ul class="product-links">
@@ -263,178 +271,70 @@ $this->params['menu'] = 'shop';
    <div class="container">
       <!-- row -->
       <div class="row">
-
          <div class="col-md-12">
             <div class="section-title text-center">
                <h3 class="title">Related Products</h3>
             </div>
          </div>
-
-         <!-- product -->
+      <?php foreach ($related as $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
          <div class="col-md-3 col-xs-6">
             <div class="product">
                <div class="product-img">
-                  <img src="/main/img/product01.png" alt="">
+                  <img src="/admin/uploads/<?= $img->img ?>" alt="">
                   <div class="product-label">
-                     <span class="sale">-30%</span>
+                     <?php if ($product->state == 1): ?>
+                        <span class="sale">-30%</span>
+                     <?php elseif ($product->state == 2): ?>
+                        <span class="new">NEW</span>
+                     <?php elseif ($product->state == 3): ?>
+                        <span class="sale">-30%</span>
+                        <span class="new">NEW</span>
+                     <?php endif; ?>
                   </div>
                </div>
                <div class="product-body">
-                  <p class="product-category">Category</p>
-                  <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                  <h4 class="product-price">$980.00
-                     <del class="product-old-price">$990.00</del>
+                  <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
+                  <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
+                  <h4 class="product-price">$<?= $product->price ?>.00
+                     <del class="product-old-price">$<?= $product->big_price ?>.00</del>
                   </h4>
                   <div class="product-rating">
+                     <?php for ($i = 0; $i < 5; $i++): ?>
+                        <?php if ($i < $product->stars): ?>
+                           <i class="fa fa-star"></i>
+                        <?php else: ?>
+                           <i class="fa fa-star-o"></i>
+                        <?php endif; ?>
+                     <?php endfor; ?>
                   </div>
                   <div class="product-btns">
-                     <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                     <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                     <button class="add-to-wishlist add_fav" data-id="<?= $product->id ?>">
+                        <?php if (in_array($product->id, $favorites)): ?>
+                           <i class="fa fa-heart"></i>
+                           <span class="tooltipp">remove from wishlist</span>
+                        <?php else: ?>
+                           <i class="fa fa-heart-o"></i>
+                           <span class="tooltipp">add to wishlist</span>
+                        <?php endif; ?>
+                     </button>
+                     <!--                                 <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
                      <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
                   </div>
                </div>
                <div class="add-to-cart">
-                  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                  <button class="add-to-cart-btn add_cart" data-id="<?= $product->id ?>"><i class="fa fa-shopping-cart"></i> add to cart</button>
                </div>
             </div>
          </div>
-         <!-- /product -->
+      <?php endforeach; ?>
 
-         <!-- product -->
-         <div class="col-md-3 col-xs-6">
-            <div class="product">
-               <div class="product-img">
-                  <img src="/main/img/product02.png" alt="">
-                  <div class="product-label">
-                     <span class="new">NEW</span>
-                  </div>
-               </div>
-               <div class="product-body">
-                  <p class="product-category">Category</p>
-                  <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                  <h4 class="product-price">$980.00
-                     <del class="product-old-price">$990.00</del>
-                  </h4>
-                  <div class="product-rating">
-                     <i class="fa fa-star"></i>
-                     <i class="fa fa-star"></i>
-                     <i class="fa fa-star"></i>
-                     <i class="fa fa-star"></i>
-                     <i class="fa fa-star"></i>
-                  </div>
-                  <div class="product-btns">
-                     <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                     <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                     <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                  </div>
-               </div>
-               <div class="add-to-cart">
-                  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-               </div>
-            </div>
-         </div>
-         <!-- /product -->
-
-         <div class="clearfix visible-sm visible-xs"></div>
-
-         <!-- product -->
-         <div class="col-md-3 col-xs-6">
-            <div class="product">
-               <div class="product-img">
-                  <img src="/main/img/product03.png" alt="">
-               </div>
-               <div class="product-body">
-                  <p class="product-category">Category</p>
-                  <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                  <h4 class="product-price">$980.00
-                     <del class="product-old-price">$990.00</del>
-                  </h4>
-                  <div class="product-rating">
-                     <i class="fa fa-star"></i>
-                     <i class="fa fa-star"></i>
-                     <i class="fa fa-star"></i>
-                     <i class="fa fa-star"></i>
-                     <i class="fa fa-star-o"></i>
-                  </div>
-                  <div class="product-btns">
-                     <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                     <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                     <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                  </div>
-               </div>
-               <div class="add-to-cart">
-                  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-               </div>
-            </div>
-         </div>
-         <!-- /product -->
-
-         <!-- product -->
-         <div class="col-md-3 col-xs-6">
-            <div class="product">
-               <div class="product-img">
-                  <img src="/main/img/product04.png" alt="">
-               </div>
-               <div class="product-body">
-                  <p class="product-category">Category</p>
-                  <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                  <h4 class="product-price">$980.00
-                     <del class="product-old-price">$990.00</del>
-                  </h4>
-                  <div class="product-rating">
-                  </div>
-                  <div class="product-btns">
-                     <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                     <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                     <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                  </div>
-               </div>
-               <div class="add-to-cart">
-                  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-               </div>
-            </div>
-         </div>
-         <!-- /product -->
-
-      </div>
-      <!-- /row -->
    </div>
-   <!-- /container -->
+   <!-- /row -->
+</div>
+<!-- /container -->
 </div>
 <!-- /Section -->
 
 <!-- NEWSLETTER -->
-<div id="newsletter" class="section">
-   <!-- container -->
-   <div class="container">
-      <!-- row -->
-      <div class="row">
-         <div class="col-md-12">
-            <div class="newsletter">
-               <p>Sign Up for the <strong>NEWSLETTER</strong></p>
-               <form>
-                  <input class="input" type="email" placeholder="Enter Your Email">
-                  <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-               </form>
-               <ul class="newsletter-follow">
-                  <li>
-                     <a href="#"><i class="fa fa-facebook"></i></a>
-                  </li>
-                  <li>
-                     <a href="#"><i class="fa fa-twitter"></i></a>
-                  </li>
-                  <li>
-                     <a href="#"><i class="fa fa-instagram"></i></a>
-                  </li>
-                  <li>
-                     <a href="#"><i class="fa fa-pinterest"></i></a>
-                  </li>
-               </ul>
-            </div>
-         </div>
-      </div>
-      <!-- /row -->
-   </div>
-   <!-- /container -->
-</div>
+<?=$this->render('/layouts/newsletter')?>
 <!-- /NEWSLETTER -->

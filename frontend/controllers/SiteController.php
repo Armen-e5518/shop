@@ -3,6 +3,8 @@
 namespace frontend\controllers;
 
 use common\models\Categories;
+use common\models\Checkout;
+use common\models\CheckoutProd;
 use common\models\LoginForm;
 use common\models\ProductComments;
 use common\models\ProductImages;
@@ -79,17 +81,78 @@ class SiteController extends Controller
     */
    public function actionIndex()
    {
-      return $this->render('index');
+      $limit = 9;
+      $cook = \Yii::$app->request->cookies->get('favorites');
+      return $this->render('index', [
+
+         'laptops' => Products::findAll(['category_id' => 1]),
+         'smartphones' => Products::find()->where(['category_id' => 2])->limit($limit)->all(),
+         'cameras' => Products::find()->where(['category_id' => 3])->limit($limit)->all(),
+         'accessories' => Products::find()->where(['category_id' => 4])->limit($limit)->all(),
+
+         'top_laptops' => Products::find()->where(['category_id' => 1])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
+         'top_smartphones' => Products::find()->where(['category_id' => 2])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
+         'top_cameras' => Products::find()->where(['category_id' => 3])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
+         'top_accessories' => Products::find()->where(['category_id' => 4])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
+
+         'top_sell_laptops' => Products::find()->where(['category_id' => 1])->orderBy(['buy_count' => SORT_DESC])->limit($limit)->all(),
+         'top_sell_smartphones' => Products::find()->where(['category_id' => 2])->orderBy(['buy_count' => SORT_DESC])->limit($limit)->all(),
+         'top_sell_cameras' => Products::find()->where(['category_id' => 3])->orderBy(['buy_count' => SORT_DESC])->limit($limit)->all(),
+
+         'favorites' => $cook ? (array)$cook->value : [],
+      ]);
+   }
+
+   public function actionWishList()
+   {
+      $cook = \Yii::$app->request->cookies->get('favorites');
+      return $this->render('wish_list', [
+         'products' => $cook ? (array)$cook->value : [],
+      ]);
+   }
+
+   public function actionCartsList()
+   {
+      $cook = \Yii::$app->request->cookies->get('carts');
+      $fav = \Yii::$app->request->cookies->get('favorites');
+      return $this->render('carts_list', [
+         'products' => $cook ? (array)$cook->value : [],
+         'favorites' => $fav ? (array)$fav->value : [],
+      ]);
+   }
+
+   public function actionCheckoutOk()
+   {
+      return $this->render('checkout_ok');
+   }
+
+   public function actionCheckout()
+   {
+      $cook = \Yii::$app->request->cookies->get('carts');
+      $model = new Checkout();
+      if ($model->load(Yii::$app->request->post()) && $model->save()) {
+         if (Yii::$app->request->post('Products')) {
+            foreach (Yii::$app->request->post('Products') as $k => $p) {
+               $mod = new CheckoutProd();
+               $mod->product_id = $p['id'];
+               $mod->count = $p['count'];
+               $mod->checkout_id = $model->id;
+               $mod->save();
+            }
+         }
+         $cookies = Yii::$app->response->cookies;
+         $cookies->remove('carts');
+         return $this->redirect(['checkout-ok']);
+      }
+      return $this->render('checkout', [
+         'carts' => $cook ? (array)$cook->value : [],
+         'model' => $model
+      ]);
    }
 
    public function actionTest()
    {
-      $cookies_request = \Yii::$app->request->cookies;
-      if (($cookie = $cookies_request->get('carts')) !== null) {
-         $value = (array)$cookie->value;
-         echo '<pre>';
-         print_r($value);
-      } else echo 'no';
+
    }
 
    public function actionView($id)
@@ -105,12 +168,14 @@ class SiteController extends Controller
       if (empty($product)) {
          return $this->redirect('store');
       };
+      $cook = \Yii::$app->request->cookies->get('favorites');
       return $this->render('view', [
-         'product' => Products::findOne($id),
+         'product' => $product,
          'images' => ProductImages::GetImgs($id),
          'comments' => $comments,
-         'stars' => $stars
-
+         'stars' => $stars,
+         'related' => Products::find()->where(['category_id' => $product->category_id])->limit(4)->all(),
+         'favorites' => $cook ? (array)$cook->value : [],
       ]);
    }
 

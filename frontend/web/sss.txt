@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home |  LAURA ASHLEY</title>
+<meta name="keywords" content="British,Home Furnishings,Armenia,Yerevan,Brand-Home accessories,bedding,lighting,wallpapers,furniture,fabrics,mirrors"/>
+<meta name="description" content="Laura Ashley Armenia Yerevan, one of the world’s best-loved fashion and home furnishings companies. Visit Laura Ashley for a quintessentially English lifestyle, quality, originality and rich design heritage."/>
+
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+
+<!--<script type="text/javascript" src="/js/jquery-1.6.4.js"></script>-->
+<!--<script type="text/javascript" src="/js/jquery.min.js"></script>-->
+
+<!-- For ie - HTML5 tags-->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript"> pagenum = 0;</script>
+<script type="text/javascript">
+    function doClear(theText) {
+        if (theText.value == theText.defaultValue) {
+            theText.value = ""
+        }
+    }
+    function doDefault(theText) {
+        if (theText.value == "") {
+            theText.value = theText.defaultValue
+        }
+    }
+</script>
+
+
+<!--<link rel="stylesheet" href="/js/slider/demo/style.css" type="text/css" media="screen" />-->
+<script src="/js/slider/demo/scripts/modernizr-2.6.1.min.js"></script>
+<!--<script src="/js/slider/demo/scripts/ggg.js"></script>-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="/js/slider/lean-slider.js"></script>
+<link rel="stylesheet" href="/js/slider/lean-slider.css" type="text/css"/>
+<link rel="stylesheet" href="/js/slider/demo/sample-styles.css" type="text/css"/>
+
+
+
+<!-- Carousel -->
+<link href="/css/carousel.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/js/jquery.jcarousel.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery('#mycarousel').jcarousel({
+            wrap: 'circular',
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    error_msg = {}
+</script>
+
+<!---->
+    <!--    <link rel="shortcut icon" href="/images/favicon.ico"/>-->
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-11642820-38', 'lauraashley.am');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body style="">
+
+<div id="wrapper">
+
+    <header id="main-header">
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('nav#main-menu > ul > li').hover(
+                function () {
+                    $(this).children('a').css('background', '#efefef');
+                    $(this).find('.submenu').fadeIn();
+                },
+                function () {
+                    $(this).children('a').css('background', 'none');
+                    $(this).find('.submenu').delay(300).fadeOut();
+                }
+            );
+
+        });
+
+    </script>
+
+    <div class="center-960 cf">
+        <h1 title="Laura Ashley"><a href="/en" title="Laura Ashley">Laura Ashley</a></h1>
+
+        <div class="head-right cf">
+	    <span class="curr_website">Armenia</span>
+            <ul id="languages">
+                
+                                                                        <li class="curr-lang">
+                                <a
+                                    href="/en/"
+                                    title="English">En</a>
+                            </li>
+                                                                                                <li class="">
+                                <a
+                                    href="/am/"
+                                    title="Հայերեն">Am</a>
+                            </li>
+                                                                                                                      
+            </ul>
+
+            
+                <ul id="top-menu">
+                                            <li class="curr-top-menu">
+                            <a href="/en//">Home</a>
+                        </li>
+                                            <li class="">
+                            <a href="/en/contacts">Contacts</a>
+                        </li>
+                                            <li class="">
+                            <a href="/en/delivery">Delivery Terms</a>
+                        </li>
+                                    </ul>
+            
+        </div>
+        <!-- .head-right -->
+    </div>
+    <!-- .center-960 -->
+
+                <!--    -->    <!--    -->    <!--    -->
+
+
+    <div class="menu-feat-search">
+        <div class="center-960 cf">
+            <nav id="main-menu">
+                                    <ul>
+                                                    <li class=''>
+                                <a href="/en/product/home-furnishings" style="color:#000000 ! important">Home Furnishings</a>
+
+                                                                    <div class="submenu">
+                                        <ul class="submenu_ul" style="float: left;">
+
+                                             <span class="menu-headings">
+                                                <a href="/en/product/home-furnishings">
+                                                    Home Furnishings                                                </a>
+                                            </span>
+
+                                            
+                                                <li>
+                                                    <a href="/en/product/new-arrivals" style="color:#A1A6A2 ! important">>&nbsp;New Arrivals</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/decorative-accessories" style="">>&nbsp;Decorative accessories</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/lighting" style="color:#707070 ! important">>&nbsp;Lighting</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/mirrors" style="">>&nbsp;Mirrors</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/cushions-throws" style="">>&nbsp;Cushions & Throws</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/rugs" style="">>&nbsp;Rugs</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/home-accessories" style="">>&nbsp;Home Accessories</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/towels" style="">>&nbsp;Towels</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/walpapper" style="">>&nbsp;Walpapper</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/paints" style="">>&nbsp;Paints</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/gifts" style="">>&nbsp;Gifts</a>
+                                                </li>
+                                            
+                                        </ul>
+                                        <!-- by room-->
+                                        
+
+                                                                                    <img src="/uploads/menu/2eee095693d60247aa35bb3d6561091c.png"
+                                                 alt=""/>
+
+                                                                                <div style="clear:both"></div>
+                                    </div>
+                                                            </li>
+
+                                                    <li class=''>
+                                <a href="/en/product/furniture" style="color:#000000 ! important">Furniture</a>
+
+                                                                    <div class="submenu">
+                                        <ul class="submenu_ul" style="float: left;">
+
+                                             <span class="menu-headings">
+                                                <a href="/en/product/furniture">
+                                                    Furniture                                                </a>
+                                            </span>
+
+                                            
+                                                <li>
+                                                    <a href="/en/product/tables" style="">>&nbsp;Tables</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/armchairs" style="">>&nbsp;Armchairs</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/sofas" style="">>&nbsp;Sofas</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/display-cabinets" style="">>&nbsp;Display cabinets</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/dining-chairs" style="">>&nbsp;Dining chairs</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/beds" style="">>&nbsp;Beds and storage units</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/dressing-tables-and-stool" style="">>&nbsp;Dressing tables and stool</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/side-tables-console-tables" style="">>&nbsp;Sidetables & console tables</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/matrases" style="">>&nbsp;Matrases</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/tv-units" style="">>&nbsp;TV units</a>
+                                                </li>
+                                            
+                                        </ul>
+                                        <!-- by room-->
+                                        
+
+                                                                                    <img src="/uploads/menu/df4519b40f1e2f63e7ecb3bdcbe4a6e1.png"
+                                                 alt=""/>
+
+                                                                                <div style="clear:both"></div>
+                                    </div>
+                                                            </li>
+
+                                                    <li class=''>
+                                <a href="/en/product/bedding" style="color:#000000 ! important">Bedding</a>
+
+                                                                    <div class="submenu">
+                                        <ul class="submenu_ul" style="float: left;">
+
+                                             <span class="menu-headings">
+                                                <a href="/en/product/bedding">
+                                                    Bedding                                                </a>
+                                            </span>
+
+                                            
+                                                <li>
+                                                    <a href="/en/product/fitted-sheets" style="">>&nbsp;Fitted Sheets</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/bedlinen" style="">>&nbsp;Bedlinen</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/duvets-pillows" style="">>&nbsp;Duvets & Pillows</a>
+                                                </li>
+                                            
+                                        </ul>
+                                        <!-- by room-->
+                                        
+
+                                                                                    <img src="/uploads/menu/77219222461d21e0dfe8d516470f4020.png"
+                                                 alt=""/>
+
+                                                                                <div style="clear:both"></div>
+                                    </div>
+                                                            </li>
+
+                                                    <li class=''>
+                                <a href="/en/product/fabrics" style="color:#000000 ! important">Fabrics</a>
+
+                                                                    <div class="submenu">
+                                        <ul class="submenu_ul" style="float: left;">
+
+                                             <span class="menu-headings">
+                                                <a href="/en/product/fabrics">
+                                                    Fabrics                                                </a>
+                                            </span>
+
+                                            
+                                                <li>
+                                                    <a href="/en/product/curtain-fabrics" style="">>&nbsp;Curtain Fabrics</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/upholstery-fabrics" style="">>&nbsp;Upholstery Fabrics</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/en/product/rmc" style="">>&nbsp;RMC</a>
+                                                </li>
+                                            
+                                        </ul>
+                                        <!-- by room-->
+                                        
+
+                                                                                    <img src="/uploads/menu/71d0ec45514387579367f9117d9d9cce.png"
+                                                 alt=""/>
+
+                                                                                <div style="clear:both"></div>
+                                    </div>
+                                                            </li>
+
+                                                    <li class=''>
+                                <a href="/en/product/kids" style="color:#000000 ! important">Kids</a>
+
+                                                            </li>
+
+                                            </ul>
+                            </nav>
+            <div id="search-form" class="cf">
+                <form action="/en/search/0" method="post">
+                    <input value="Search" type="text" name="q" onblur="doDefault(this)"
+                           onfocus="doClear(this)"/>
+                    <span class="button-small-style"><input type="submit" name="" value="Go"/></span>
+                </form>
+            </div>
+        </div>
+        <!-- .center-960 -->
+    </div>
+    <!-- .menu-feat-search -->
+</header>
+     
+
+    <section id="main" class="cf">
+<div class="slider-wrapper">
+    <div id="slider">
+
+                            
+                            
+                    <div class="slide1" data-id="180" >
+                        <img src="/uploads/slider/LA_SS19_BD_S01_UNDERSTATED_ELEGANCE_367.jpg" alt=""/>
+                    </div>
+                                                
+                            
+                    <div class="slide1" data-id="190" >
+                        <img src="/uploads/slider/LA_SS19_AT_S01_TOUCH_OF_GLAMOUR_055.jpg" alt=""/>
+                    </div>
+                                                
+                            
+                    <div class="slide1" data-id="189" >
+                        <img src="/uploads/slider/LA_SS19_AD_S02_FLORAL_COURTYARD_885.jpg" alt=""/>
+                    </div>
+                                                
+                            
+                    <div class="slide1" data-id="188" >
+                        <img src="/uploads/slider/LA_SS19_DP_S01_FLORAL_BLUSH_032.jpg" alt=""/>
+                    </div>
+                                                
+                            
+                    <div class="slide1" data-id="187" >
+                        <img src="/uploads/slider/LA_SS19_CD_S02_FLORAL_BLUSH_030.jpg" alt=""/>
+                    </div>
+                                                
+                            
+                    <div class="slide1" data-id="186" >
+                        <img src="/uploads/slider/LA_SS19_CB_S01_FLORAL_BLUSH_0331.jpg" alt=""/>
+                    </div>
+                                                
+                            
+                    <div class="slide1" data-id="184" >
+                        <img src="/uploads/slider/LA_SS19_BZ_S01_FLORAL_BLUSH_093.jpg" alt=""/>
+                    </div>
+                                                
+                            
+                    <div class="slide1" data-id="183" >
+                        <img src="/uploads/slider/LA_SS19_BX_S02_FLORAL_BLUSH_044.jpg" alt=""/>
+                    </div>
+                                                
+                            
+                    <div class="slide1" data-id="182" >
+                        <img src="/uploads/slider/LA_SS19_BK_S02_UNDERSTATED_ELEGANCE_490.jpg" alt=""/>
+                    </div>
+                                                
+                            
+                    <div class="slide1" data-id="181" >
+                        <img src="/uploads/slider/LA_SS19_BF_S01_UNDERSTATED_ELEGANCE_975.jpg" alt=""/>
+                    </div>
+                                                
+                            
+                    <div class="slide1" data-id="191" >
+                        <img src="/uploads/slider/LA_SS19_AP_S02_FLORAL_COURTYARD_1455.jpg" alt=""/>
+                    </div>
+                                                </div>
+    <div id="slider-direction-nav"></div>
+    <div id="slider-control-nav"></div>
+</div>
+
+<script type="text/javascript">
+    //$(document).ready(function () {
+        var slider = $('#slider').leanSlider({
+            directionNav:'#slider-direction-nav',
+            controlNav:'#slider-control-nav',
+	    startSlide: 0,
+	    pauseTime: 7000,
+        });
+   // });
+</script>
+
+
+
+    <style type="text/css">
+        .jcarousel-skin-tango .jcarousel-clip-horizontal {
+            height: 190px ! important;
+        }
+        .jcarousel-skin-tango .jcarousel-item-horizontal article h1{
+            height: 60px;
+        }
+        .jprice{
+            color: #990000;
+        }
+    </style>
+    
+    <div class="new_arrivals"><h1>New arrivals</h1></div>
+            <ul id="mycarousel" class="jcarousel-skin-tango">
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3916">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Dove Grey 200 Thread Count Percale Fitted Sheet"
+                                style="width: 240px">Dove Grey 200 Thread Count Per...                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;29.800 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/418b62d3f65990c4a508b800e45e60ff.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3915">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Duck Egg 200 Thread Count Deep Fitted Sheet"
+                                style="width: 240px">Duck Egg 200 Thread Count Deep...                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;29.800 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/70c87802fba39c1dcd2bbf9e1ab1b6fb.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3914">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | White 200 Thread Count Percale Fitted Sheet"
+                                style="width: 240px">White 200 Thread Count Percale...                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;29.800 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/c2b380e3dd885bf9516ca03b25ed545a.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3913">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Cream 200 Thread Count Percale Fitted Sheet"
+                                style="width: 240px">Cream 200 Thread Count Percale...                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;29.800 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/8c774f132736d00a930bfc49f0a6c67e.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3912">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Cream 200 Thread Count Percale Fitted Sheet"
+                                style="width: 240px">Cream 200 Thread Count Percale...                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;32.500 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/b445abdad0aaff36f71cbad6051e1946.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3910">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Josette Steel Cup and Saucer"
+                                style="width: 240px">Josette Steel Cup and Saucer                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;15.000 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/62c76aaa75c664cf68d26614bdeebcb5.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3909">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Josette Steel Cake Forks Set of 4"
+                                style="width: 240px">Josette Steel Cake Forks Set o...                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;15.000 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/1f95cc1fe3f585c3a7e5cf3bd6f39281.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3906">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Cockerel Oven Glove"
+                                style="width: 240px">Cockerel Oven Glove                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;11.000 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/53329f5838db0b4e655ff8379b17703f.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3905">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Josette Steel 3 Tier Cake Stand"
+                                style="width: 240px">Josette Steel 3 Tier Cake Stan...                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;39.000 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/bf72eabc8212b36d05baa14f64bf3977.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3879">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Josette Steel Dinner Plate"
+                                style="width: 240px">Josette Steel Dinner Plate                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;11.200 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/29f435dd83c51426424b8245c9f8f358.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3878">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Josette Steel Bowl"
+                                style="width: 240px">Josette Steel Bowl                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;7.500 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/a1d0c3c4af514f2f0c15ab15fc0c6017.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3877">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Cotton Bath Mat Cranberry"
+                                style="width: 240px">Cotton Bath Mat Cranberry                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;27.900 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/7dad441175aa31e2f8f988f71542a40b.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3876">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Cotton Bath Mat White"
+                                style="width: 240px">Cotton Bath Mat White                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;27.900 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/1497cddc31fbf61a7240426749a65311.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3875">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Josette Steel Cake Slice"
+                                style="width: 240px">Josette Steel Cake Slice                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;15.000 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/3baf2be6734057427c1d412eab4077b7.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3874">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Premium Lacquered Cabinet Furniture Care Kit"
+                                style="width: 240px">Premium Lacquered Cabinet Furn...                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;27.900 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/ad8148797a050176e7bc7bdb6ab2d6db.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3870">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Josette Steel Regent Mug"
+                                style="width: 240px">Josette Steel Regent Mug                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;9.300 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/6966d3298b90d5663bb39a6a99b5c5fb.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3869">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="New Arrivals | Boxed Josette Steel Cake Plates Set of 4"
+                                style="width: 240px">Boxed Josette Steel Cake Plate...                                <br>New Arrivals
+                                <br><span class="jprice">Price                                    &nbsp;32.500 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/c5d3409020cf9866cc7105c51a6b0c45.jpg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3858">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="Christmas | Robins, Puddings And Check Set Of 3 Tea Towels"
+                                style="width: 240px">Robins, Puddings And Check Set...                                <br>Christmas
+                                <br><span class="jprice">Price                                    &nbsp;16.000 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/list_de045389-e9a5-46af-8847-cf4c25405608.jpeg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3857">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="Christmas | Beaded Gold Set Of 2 Placemats"
+                                style="width: 240px">Beaded Gold Set Of 2 Placemats                                <br>Christmas
+                                <br><span class="jprice">Price                                    &nbsp;16.000 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/list_0c67b193-a42c-4b43-8780-09f38128866b.jpeg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                            <li style="height: 190px">
+                    <a href="/en/product/show/3856">
+                        <article>
+                            <h1 class="home_bottom_slider_title" title="Christmas | Lit LED Mini Christmas Tree Silver"
+                                style="width: 240px">Lit LED Mini Christmas Tree Si...                                <br>Christmas
+                                <br><span class="jprice">Price                                    &nbsp;11.000 AMD                                </span>                            </h1>
+                            <img
+                                src="/uploads/products/list_212badb8-8fad-4c51-aae3-25e28750cabf.jpeg"
+                                height="188" width="280" alt="no image"/>
+                    </a>
+                    </article>
+                </li>
+                    </ul>
+    
+    <div style="width: 100%;height: 20px;"></div>
+</section>
+
+</div>
+<!--  id="wrapper" -->
+
+<!--FOOTER-->
+<footer id="main-footer">
+			<div class='cataloguefooterbox'>
+			<div class="center-960">
+				<div class='catalogueimg'><a target='_blank' href="https://secure.viewer.zmags.com/services/htmlviewer/content/487c31e7?pubVersion=82&environment=2&locale=en_us&viewerID=9025f17c" class="orderCatalogue"><img src="http://www.lauraashley.am/uploads/summer_ctalogue/fd0a573ab593d96f2ed04d242aec8ced.png" alt="Spring Summer Catalogue 2014"></a></div>
+				<div  class='cataloguetitle'><h3><a target='_blank' href="https://secure.viewer.zmags.com/services/htmlviewer/content/487c31e7?pubVersion=82&environment=2&locale=en_us&viewerID=9025f17c">SPRING / SUMMER CATALOGUE 2019</a></h3></div>
+				<div class='clr'></div>
+			</div>
+		</div>
+			    <div class="center-960">
+        <div id="foot-menu">
+                                    <ul>
+                                    <li>
+                        <a>
+                            Shopping With Us                        </a>
+                                                    <ul>
+                                                                    <li class="">
+                                        <a href="/en/delivery">
+                                            >&nbsp;Delivery                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/returns">
+                                            >&nbsp;Returns                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/gift-cards">
+                                            >&nbsp;Gift Cards                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/faqs">
+                                            >&nbsp;FAQs                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/buying-guides">
+                                            >&nbsp;Buying Guides                                        </a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                    <li>
+                        <a>
+                            Home Furnishing                        </a>
+                                                    <ul>
+                                                                    <li class="">
+                                        <a href="/en/product/furniture">
+                                            >&nbsp;Furniture                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/product/bedding">
+                                            >&nbsp;Bedding                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/product/lighting">
+                                            >&nbsp;Lighting                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/product/mirrors">
+                                            >&nbsp;Mirrors                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/product/cushions-throws">
+                                            >&nbsp;Cushions & Throws                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/product/rugs">
+                                            >&nbsp;Rugs                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/product/home-accessories">
+                                            >&nbsp;Accessories                                        </a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                    <li>
+                        <a>
+                            About Laura Ashley                        </a>
+                                                    <ul>
+                                                                    <li class="">
+                                        <a href="/en/corporate-information">
+                                            >&nbsp;Corporate Information                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/careers">
+                                            >&nbsp;Careers                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/terms-conditions">
+                                            >&nbsp;Terms & Conditions                                        </a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="/en/contacts">
+                                            >&nbsp;Contacts                                        </a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                		</ul>
+                    </div>
+        <!-- #foot-menu -->
+        <div class="soc-newsltt">
+            <div class="social-foot">
+                <a href="https://www.facebook.com/LauraAshley.am" class="fb" target="_blank" title="Facebook">Facebook</a>
+		<!--
+                <a href="#" class="tw" title="Twitter">Twitter</a>
+                <a href="#" class="pin" title="Pinterest">Pinterest</a>
+		-->
+            </div>
+
+
+            <div class="newsletter cf">
+
+                <input type="text" id="subs_email" placeholder="Enter email address" style="color: rgb(170, 170, 170); onblur="doDefault(this)" onfocus="doClear(this)"/>
+                <span class="button-style"><input type="button" value="Sign Up" id="subscribe_btn"></span>
+            </div>
+        </div>
+
+        <div class="ac clear"></div>
+        <br>
+        <br>
+        <br>
+        <span class="copy">Copyright © 2013 lauraashley.am  All Rights Reserved</span>
+        <span class="e_works"> <a target="_blank" title="Web Design &amp; development by e-Works" href="http://www.e-works.am">Web Design &amp; development by <span>e</span>-Works</a></span>
+    </div>
+    <!-- .center-960 -->
+</footer>
+
+
+<script type="text/javascript">
+    /**
+     * @desc check whether the string is not empty
+     * @author Harut
+     * @param String
+     * @return type
+     */
+    function isValid(str) {
+        return $.trim(str).length === 0;
+    }
+
+    /**
+     * @desc checking the correct email
+     * @author Harut
+     * @param email
+     * @return type
+     */
+
+    function validateEmail(email) {
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        return reg.test(email);
+    }
+
+
+    $(document).ready(function () {
+
+        $('#subscribe_btn').click(function () {
+            $('.s_error').remove();
+
+            var is_ok = true;
+
+
+            if (isValid($('#subs_email').val())) {
+                $('.button-style').after('<div class="s_error">' + form_error_msg.required + '</div>');
+                is_ok = false;
+            } else {
+                if (!validateEmail($('#subs_email').val())) {
+                    $('.button-style').after('<div class="s_error">' + form_error_msg.invalid_email + '</div>');
+                    is_ok = false;
+                }
+            }
+
+            if (is_ok) {
+
+                $.ajax({
+                    type: 'post',
+                    url: '/subscribers',
+                    data: {email: $('#subs_email').val()},
+                    dataType: 'json',
+                    success: function (val) {
+                        if (val.iempty) {
+                            $('.button-style').after('<div class="s_error">' + form_error_msg.required + '</div>');
+                        } else {
+
+                            if (!val) {
+                                $('.button-style').after('<div class="s_error s_success">' + form_error_msg.email_registred + '</div>');
+
+
+                            } else {
+                                $('.button-style').after('<div class="s_error s_success">' + form_error_msg.success_order + '</div>');
+
+
+                                $("#subs_email").val('');
+                                $("#subs_email").val('');
+                                setTimeout("$('.s_error').remove()", 3000);
+                            }
+
+                        }
+                    },
+                    error: function (err) {
+                        $('.button-style').after('<div class="s_error">' + form_error_msg.success_order + '</div>');
+                    }
+                });
+
+            }
+
+        });
+
+        $(function () {
+            $.Placeholder.init({ color: '#aaaaaa'});
+
+        });
+
+//    count_participating
+        $('#count_participating').change(function () {
+            $('.participating_members').remove();
+            var str_html = '';
+            for (i = 0; i < $(this).val(); i++) {
+
+                str_html += '<div style="margin-left: 30px" class="participating_members">' +
+                    '<label for="count_participating"><b>' + (i + 1) + '.</b>&nbsp;' + $('#hidden_participating').val() + '</label>' +
+                    '<input type="text" name="participating_member[]" class="participating_member">' +
+                    '<div class="ac clear"></div></div>'
+
+            }
+            $('#hidden_participating').after(str_html);
+        })
+
+    });
+
+</script>
+
+
+<script type="text/javascript">
+    form_error_msg = {
+        required: "Required field",
+
+        success_order: "Thank you for subscription",
+        invalid_email: "Wrong email address",
+        email_registred: "This email address already exists"
+    }
+
+</script>
+<script type="text/javascript">(function(a){a.Placeholder={settings:{color:"rgb(169,169,169)",dataName:"original-font-color"},init:function(b){if(b){a.extend(a.Placeholder.settings,b)}var c=function(b){return a(b).val()};var d=function(b,c){a(b).val(c)};var e=function(b){return a(b).attr("placeholder")};var f=function(a){var b=c(a);return b.length===0||b==e(a)};var g=function(b){a(b).data(a.Placeholder.settings.dataName,a(b).css("color"));a(b).css("color",a.Placeholder.settings.color)};var h=function(b){a(b).css("color",a(b).data(a.Placeholder.settings.dataName));a(b).removeData(a.Placeholder.settings.dataName)};var i=function(a){d(a,e(a));g(a)};var j=function(b){if(a(b).data(a.Placeholder.settings.dataName)){d(b,"");h(b)}};var k=function(){if(f(this)){j(this)}};var l=function(){if(f(this)){i(this)}};var m=function(){if(f(this)){j(this)}};a("textarea, input[type='text']").each(function(b,c){if(a(c).attr("placeholder")){a(c).focus(k);a(c).blur(l);a(c).bind("parentformsubmitted",m);a(c).trigger("blur");a(c).parents("form").submit(function(){a(c).trigger("parentformsubmitted")})}});return this},cleanBeforeSubmit:function(b){if(!b){b=a("form")}a(b).find("textarea, input[type='text']").trigger("parentformsubmitted");return b}}})(jQuery)</script>
+<!--END FOOTER-->
+
+
+</body>
+</html>

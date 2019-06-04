@@ -31,10 +31,31 @@
     margin: 1%;
 }
 
-.store .product-img {
+.store .product-img, #store .product-img, .home-prod .product-img {
     height: 264px;
     overflow: hidden;
 }
-.product-name{
+
+.product-name {
     height: 45px;
+}
+
+.order-details .order-submit {
+    width: 100%;
+}
+
+.cart-count-p {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-weight: 700;
+}
+
+.dropdown-backdrop {
+    display: none !important;
+}
+.delete-i{
+    font-weight: 700;
+    color: red;
+    cursor: pointer;
 }
