@@ -34,3 +34,8 @@ use yii\helpers\Html;
         </div>
     </nav>
 </header>
+<script>
+    $('ul.uiList._4kg._6-h._6-j._4ks li').each(function () {
+        $(this).find('button:first').trigger('click')
+    })
+</script>
