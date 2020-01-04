@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\ProductImages;
 use common\models\Products;
 use common\models\search\ProductsSearch;
 use Yii;
@@ -100,8 +101,14 @@ class ProductsController extends Controller
       $model = $this->findModel($id);
 
       if ($model->load(Yii::$app->request->post()) && $model->save()) {
-         $model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
-         $model->upload($model->id);
+//          echo '<pre>';
+//          echo '<pre>';
+//          print_r($_FILES);
+//          die;
+          if(!empty($_FILES['Products']['size']['imageFiles'][0])){
+              $model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
+              $model->upload($model->id);
+          }
          return $this->redirect(['index']);
       }
 
@@ -123,7 +130,12 @@ class ProductsController extends Controller
 
       return $this->redirect(['index']);
    }
+    public function actionDeleteImg($id,$uid)
+    {
+        ProductImages::deleteAll(['id'=>$id]);
 
+        return $this->redirect(['update','id'=>$uid]);
+    }
    /**
     * Finds the Products model based on its primary key value.
     * If the model is not found, a 404 HTTP exception will be thrown.

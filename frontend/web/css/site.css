@@ -59,3 +59,9 @@
     color: red;
     cursor: pointer;
 }
+button,select{
+    outline: none!important;
+}
+.dropdown a{
+    cursor: pointer;
+}

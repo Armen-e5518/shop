@@ -16,7 +16,7 @@ class ProductsSearchStore extends Products
    public function rules()
    {
       return [
-         [['categories', 'price_from', 'price_to', 'sort', 'count'], 'integer'],
+         [['categories', 'brends','price_from', 'price_to', 'sort', 'count'], 'integer'],
          [['word'], 'string'],
       ];
    }
@@ -43,8 +43,12 @@ class ProductsSearchStore extends Products
       if (!empty($this->categories[0]) && $this->categories[0] == 0 && empty($this->categories[1])) {
          $this->categories = [];
       }
+       if (!empty($this->brends[0]) && $this->brends[0] == 0 && empty($this->brends[1])) {
+           $this->brends = [];
+       }
       $query->andFilterWhere([
          'category_id' => $this->categories,
+         'brend_id' => $this->brends,
       ]);
       $query->andFilterWhere(['>', 'price', $this->price_from])
          ->andFilterWhere(['<', 'price', $this->price_to])

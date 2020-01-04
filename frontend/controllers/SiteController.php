@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Brend;
 use common\models\Categories;
 use common\models\Checkout;
 use common\models\CheckoutProd;
@@ -199,6 +200,7 @@ class SiteController extends Controller
          'products' => $models,
          'pages' => $pages,
          'categories' => Categories::find()->all(),
+         'brends' => Brend::find()->all(),
          'search' => $searchModel,
          'total_count' => $total_count,
          'favorites' => $cook ? (array)$cook->value : [],

@@ -9,6 +9,7 @@ use yii\web\UploadedFile;
  *
  * @property int $id
  * @property int $category_id
+ * @property int $brend_id
  * @property string $name
  * @property string $text
  * @property string $description
@@ -23,6 +24,7 @@ use yii\web\UploadedFile;
 class Products extends \yii\db\ActiveRecord
 {
    public $categories = [];
+   public $brends = [];
    public $price_from = 100;
    public $price_to = 10000;
    public $sort = 0;
@@ -49,7 +51,7 @@ class Products extends \yii\db\ActiveRecord
    {
       return [
 //         [['imageFiles'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 4],
-         [['category_id', 'stars', 'price', 'big_price', 'state', 'views', 'buy_count'], 'integer'],
+         [['category_id','brend_id', 'stars', 'price', 'big_price', 'state', 'views', 'buy_count'], 'integer'],
          [['text', 'description'], 'string'],
          [['name'], 'string', 'max' => 255],
       ];
@@ -58,7 +60,7 @@ class Products extends \yii\db\ActiveRecord
    public function upload($id)
    {
       if ($this->validate()) {
-         ProductImages::deleteAll(['product_id' => $id]);
+        // ProductImages::deleteAll(['product_id' => $id]);
          foreach ($this->imageFiles as $file) {
             $name = md5(microtime(true)) . '.' . $file->extension;
             $file->saveAs('uploads/' . $name);
@@ -81,6 +83,7 @@ class Products extends \yii\db\ActiveRecord
       return [
          'id' => 'ID',
          'category_id' => 'Category ID',
+         'brend_id' => 'Brend ID',
          'name' => 'Name',
          'text' => 'Text',
          'description' => 'Description',
@@ -104,4 +107,8 @@ class Products extends \yii\db\ActiveRecord
    {
       return self::find()->where(['category_id' => $id])->count();
    }
+    public static function GetCountByBrId($id)
+    {
+        return self::find()->where(['brend_id' => $id])->count();
+    }
 }

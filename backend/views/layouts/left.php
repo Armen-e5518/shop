@@ -16,6 +16,7 @@
                 'items' => [
                     ['label' => 'Products', 'icon' => 'file-code-o', 'url' => ['/products']],
                     ['label' => 'Categories', 'icon' => 'file-code-o', 'url' => ['/categories']],
+                    ['label' => 'Brend', 'icon' => 'file-code-o', 'url' => ['/brend']],
                     ['label' => 'Checkout', 'icon' => 'file-code-o', 'url' => ['/checkout']],
                     ['label' => 'Socsites', 'icon' => 'file-code-o', 'url' => ['/socsites']],
                     ['label' => 'Product comments', 'icon' => 'file-code-o', 'url' => ['/product-comments']],
