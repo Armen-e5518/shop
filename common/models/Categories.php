@@ -6,6 +6,7 @@ namespace common\models;
  * This is the model class for table "categories".
  *
  * @property int $id
+ * @property int $parent_id
  * @property string $name
  */
 class Categories extends \yii\db\ActiveRecord
@@ -25,6 +26,7 @@ class Categories extends \yii\db\ActiveRecord
    {
       return [
          [['name'], 'required'],
+         [['parent_id'], 'integer'],
          [['name'], 'string', 'max' => 255],
       ];
    }
@@ -37,6 +39,7 @@ class Categories extends \yii\db\ActiveRecord
       return [
          'id' => 'ID',
          'name' => 'Name',
+         'parent_id' => 'Parent',
       ];
    }
 

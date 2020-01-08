@@ -5,6 +5,7 @@ namespace backend\controllers;
 use common\models\ProductImages;
 use common\models\Products;
 use common\models\search\ProductsSearch;
+use frontend\helper\Helper;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -89,6 +90,17 @@ class ProductsController extends Controller
       ]);
    }
 
+    public function actionAdd()
+    {
+        $model = new Products();
+        if($model->load(Yii::$app->request->post())){
+            echo  $model->url;
+            Helper::getData($model->url);
+        }
+        return $this->render('add', [
+            'model' => $model,
+        ]);
+    }
    /**
     * Updates an existing Products model.
     * If update is successful, the browser will be redirected to the 'view' page.

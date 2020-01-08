@@ -81,7 +81,7 @@ $price = 0;
                            <div class="order-col">
                               <div><strong>( <?= $cart['count'] ?> X )</strong> <?= $prod->name ?></div>
                               <div class="i-price" data-price="<?= $prod->price * $cart['count'] ?>">
-                                 $<?= $prod->price * $cart['count'] ?>.00
+                                 $<?= $prod->price * $cart['count'] ?>
                                  <span class="delete-i" data-id="<?= $cart['id'] ?>" title="Delete">X</span>
                               </div>
                            </div>
@@ -97,7 +97,7 @@ $price = 0;
                </div>
                <div class="order-col">
                   <div><strong>TOTAL</strong></div>
-                  <div><strong class="order-total">$<span><?= $price ?></span>.00</strong></div>
+                  <div><strong class="order-total">$<span><?= $price ?></span></strong></div>
                </div>
             </div>
             <div class="input-checkbox">

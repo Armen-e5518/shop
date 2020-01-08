@@ -915,6 +915,8 @@ textarea.input {
 .product .product-body .product-name {
   text-transform: uppercase;
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .product .product-body .product-name>a {
@@ -1016,8 +1018,8 @@ textarea.input {
 
 .product .add-to-cart {
   position: absolute;
-  left: -2px;
-  right: -2px;
+  left: 2px;
+  right: 2px;
   bottom: 1px;
   padding: 15px;
   background: #1e1f29;

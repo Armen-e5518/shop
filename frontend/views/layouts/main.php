@@ -7,7 +7,7 @@
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
 
-
+Yii::$app->language = 'en-US';
 AppAsset::register($this);
 $categories = \common\models\Categories::find()->all();
 $cook = \Yii::$app->request->cookies->get('favorites');
@@ -58,7 +58,7 @@ $carts = $carts ? $carts->value : [];
     <div id="top-header">
         <div class="container">
             <ul class="header-links pull-left">
-                <li><a href="tel:+37494322396"><i class="fa fa-phone"></i>+37494-32-23-96</a></li>
+                <li><a href="tel:+37494322396"><i class="fa fa-phone"></i>+37494-32-23-96 <?=Yii::t('app','dev')?></a></li>
                 <li><a href="mailto:armen5518@gmail.com"><i class="fa fa-envelope-o"></i>armen5518@gmail.com</a></li>
                 <li><a target="_blank"
                        href="https://www.google.com/maps/place/%D0%9E%D0%BF%D0%B5%D1%80%D0%BD%D1%8B%D0%B9+%D1%82%D0%B5%D0%B0%D1%82%D1%80/@40.1860722,44.5162101,18z/data=!4m5!3m4!1s0x406abce217b8839d:0x80bc65ebce1f70f!8m2!3d40.1858221!4d44.5150673"><i
@@ -90,12 +90,6 @@ $carts = $carts ? $carts->value : [];
                             'action' => '/site/store',
                             'method' => 'get',
                         ]); ?>
-                        <select class="input-select" name="ProductsSearchStore[categories][]">
-                            <option value="0">All Categories</option>
-                            <?php foreach ($categories as $category): ?>
-                                <option value="<?= $category->id ?>"><?= $category->name ?></option>
-                            <?php endforeach; ?>
-                        </select>
                         <input class="input" value="<?= !empty($this->params['word']) ? $this->params['word'] : ''; ?>"
                                name="ProductsSearchStore[word]" placeholder="Search here">
                         <button class="search-btn">Search</button>

@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                  $s = '';
                  foreach ($imgs as $k=>$img) {
                     ++$k;
-                    $s .= "<img width='50px' src='/admin/uploads/$img->img'</img>";
+                    $s .= "<img width='50px' src='$img->img'</img>";
                  }
                  return $s;
               },

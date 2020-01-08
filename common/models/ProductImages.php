@@ -7,7 +7,6 @@ namespace common\models;
  *
  * @property int $id
  * @property int $product_id
- * @property int $image_id
  * @property int $img
  */
 class ProductImages extends \yii\db\ActiveRecord
@@ -26,7 +25,7 @@ class ProductImages extends \yii\db\ActiveRecord
    public function rules()
    {
       return [
-         [['product_id', 'image_id'], 'integer'],
+         [['product_id'], 'integer'],
          [['img'], 'string'],
       ];
    }
@@ -39,7 +38,6 @@ class ProductImages extends \yii\db\ActiveRecord
       return [
          'id' => 'ID',
          'product_id' => 'Product ID',
-         'image_id' => 'Image ID',
          'img' => 'Image ',
       ];
    }

@@ -45,7 +45,14 @@ $this->params['menu'] = 'shop';
                 ]); ?>
                 <div class="aside">
                     <h3 class="aside-title">Categories</h3>
+                    <div>
+                        <?php   $res = \frontend\helper\Helper::fetchCategoryTreeList();
+                        foreach ($res as $r) {
+                            echo  $r;
+                        }?>
+                    </div>
                     <div class="checkbox-filter">
+
                         <?php foreach ($categories as $category): ?>
                             <div class="input-checkbox">
                                 <input type="checkbox" name="ProductsSearchStore[categories][]"
@@ -59,6 +66,8 @@ $this->params['menu'] = 'shop';
                                 </label>
                             </div>
                         <?php endforeach; ?>
+
+
                     </div>
                 </div>
                 <!-- /aside Widget -->
@@ -106,24 +115,19 @@ $this->params['menu'] = 'shop';
                     <a title="reset" class="search-btn" href="/site/store">Reset</a>
                     <button class="search-btn"><i class="fa fa-search"></i> Apply</button>
                 </div>
-
-                <!-- /aside Widget -->
-
-
-                <!-- aside Widget -->
                 <div class="aside">
                     <h3 class="aside-title">Top selling</h3>
                     <?php foreach ($get_top as $top): $img = \common\models\ProductImages::GetOan($top->id) ?>
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                                <img src="<?= $img->img ?>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
                                 <h3 class="product-name"><a href="/site/view?id=<?= $top->id ?>"><?= $top->name ?></a>
                                 </h3>
-                                <h4 class="product-price">$<?= $top->price ?>.00
-                                    <del class="product-old-price">$<?= $top->big_price ?>.00</del>
+                                <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($top->price) ?>
+                                    <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($top->price) ?></del>
                                 </h4>
                             </div>
                         </div>
@@ -149,8 +153,8 @@ $this->params['menu'] = 'shop';
                         <label>
                             Show:
                             <select class="input-select" name="ProductsSearchStore[count]">
-                                <option value="20">20</option>
-                                <option value="50" <?= $search->count == 50 ? 'selected' : '' ?>>50</option>
+                                <option value="18">18</option>
+                                <option value="60" <?= $search->count == 60 ? 'selected' : '' ?>>60</option>
                             </select>
                         </label>
                     </div>
@@ -169,7 +173,7 @@ $this->params['menu'] = 'shop';
                             <div class="col-md-4 col-xs-6">
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                                        <img src="<?= $img->img ?>" alt="">
                                         <div class="product-label">
                                             <?php if ($product->state == 1): ?>
                                                 <span class="sale">-30%</span>
@@ -186,8 +190,8 @@ $this->params['menu'] = 'shop';
                                         <h3 class="product-name"><a
                                                     href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a>
                                         </h3>
-                                        <h4 class="product-price">$<?= $product->price ?>.00
-                                            <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                                        <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                            <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                                         </h4>
                                         <div class="product-rating">
                                             <?php for ($i = 0; $i < 5; $i++): ?>

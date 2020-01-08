@@ -42,7 +42,7 @@ $imgs = \common\models\ProductImages::GetImgs($model->id);
             <?= $form->field($model, 'imageFiles[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
             <?php if (!empty($imgs)): ?>
                 <?php foreach ($imgs as $img): ?>
-                    <img width="50px" src="/admin/uploads/<?= $img->img ?>" alt="">
+                    <img width="50px" src="<?= $img->img ?>" alt="">
                     <a href="/admin/products/delete-img?id=<?= $img->id ?>&uid=<?=$model->id?>">Delete</a>
                 <?php endforeach; ?>
             <?php endif; ?>

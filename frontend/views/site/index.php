@@ -93,7 +93,7 @@ $this->params['word'] = '';
                            <?php foreach ($laptops as $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                               <div class="product">
                                  <div class="product-img">
-                                    <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                                    <img src="?= $img->img ?>" alt="">
                                     <div class="product-label">
                                        <?php if ($product->state == 1): ?>
                                           <span class="sale">-30%</span>
@@ -108,8 +108,8 @@ $this->params['word'] = '';
                                  <div class="product-body">
                                     <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                                     <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                                    <h4 class="product-price">$<?= $product->price ?>.00
-                                       <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                                    <h4 class="product-price">$<?=\frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                       <del class="product-old-price">$<?=\frontend\helper\Price::getBigPrice($product->price)  ?></del>
                                     </h4>
                                     <div class="product-rating">
                                        <?php for ($i = 0; $i < 5; $i++): ?>
@@ -149,7 +149,7 @@ $this->params['word'] = '';
                            <?php foreach ($smartphones as $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                               <div class="product">
                                  <div class="product-img">
-                                    <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                                    <img src="<?= $img->img ?>" alt="">
                                     <div class="product-label">
                                        <?php if ($product->state == 1): ?>
                                           <span class="sale">-30%</span>
@@ -164,8 +164,8 @@ $this->params['word'] = '';
                                  <div class="product-body">
                                     <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                                     <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                                    <h4 class="product-price">$<?= $product->price ?>.00
-                                       <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                                    <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                       <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                                     </h4>
                                     <div class="product-rating">
                                        <?php for ($i = 0; $i < 5; $i++): ?>
@@ -205,7 +205,7 @@ $this->params['word'] = '';
                            <?php foreach ($cameras as $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                               <div class="product">
                                  <div class="product-img">
-                                    <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                                    <img src="<?= $img->img ?>" alt="">
                                     <div class="product-label">
                                        <?php if ($product->state == 1): ?>
                                           <span class="sale">-30%</span>
@@ -220,8 +220,8 @@ $this->params['word'] = '';
                                  <div class="product-body">
                                     <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                                     <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                                    <h4 class="product-price">$<?= $product->price ?>.00
-                                       <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                                    <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                       <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                                     </h4>
                                     <div class="product-rating">
                                        <?php for ($i = 0; $i < 5; $i++): ?>
@@ -261,7 +261,7 @@ $this->params['word'] = '';
                            <?php foreach ($accessories as $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                               <div class="product">
                                  <div class="product-img">
-                                    <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                                    <img src="<?= $img->img ?>" alt="">
                                     <div class="product-label">
                                        <?php if ($product->state == 1): ?>
                                           <span class="sale">-30%</span>
@@ -276,8 +276,8 @@ $this->params['word'] = '';
                                  <div class="product-body">
                                     <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                                     <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                                    <h4 class="product-price">$<?= $product->price ?>.00
-                                       <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                                    <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                       <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                                     </h4>
                                     <div class="product-rating">
                                        <?php for ($i = 0; $i < 5; $i++): ?>
@@ -401,7 +401,7 @@ $this->params['word'] = '';
                            <?php foreach ($top_laptops as $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                               <div class="product">
                                  <div class="product-img">
-                                    <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                                    <img src="<?= $img->img ?>" alt="">
                                     <div class="product-label">
                                        <?php if ($product->state == 1): ?>
                                           <span class="sale">-30%</span>
@@ -416,8 +416,8 @@ $this->params['word'] = '';
                                  <div class="product-body">
                                     <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                                     <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                                    <h4 class="product-price">$<?= $product->price ?>.00
-                                       <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                                    <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                       <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                                     </h4>
                                     <div class="product-rating">
                                        <?php for ($i = 0; $i < 5; $i++): ?>
@@ -457,7 +457,7 @@ $this->params['word'] = '';
                            <?php foreach ($top_smartphones as $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                               <div class="product">
                                  <div class="product-img">
-                                    <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                                    <img src="<?= $img->img ?>" alt="">
                                     <div class="product-label">
                                        <?php if ($product->state == 1): ?>
                                           <span class="sale">-30%</span>
@@ -472,8 +472,8 @@ $this->params['word'] = '';
                                  <div class="product-body">
                                     <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                                     <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                                    <h4 class="product-price">$<?= $product->price ?>.00
-                                       <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                                    <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                       <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                                     </h4>
                                     <div class="product-rating">
                                        <?php for ($i = 0; $i < 5; $i++): ?>
@@ -513,7 +513,7 @@ $this->params['word'] = '';
                            <?php foreach ($top_cameras as $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                               <div class="product">
                                  <div class="product-img">
-                                    <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                                    <img src="<?= $img->img ?>" alt="">
                                     <div class="product-label">
                                        <?php if ($product->state == 1): ?>
                                           <span class="sale">-30%</span>
@@ -528,8 +528,8 @@ $this->params['word'] = '';
                                  <div class="product-body">
                                     <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                                     <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                                    <h4 class="product-price">$<?= $product->price ?>.00
-                                       <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                                    <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                       <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                                     </h4>
                                     <div class="product-rating">
                                        <?php for ($i = 0; $i < 5; $i++): ?>
@@ -569,7 +569,7 @@ $this->params['word'] = '';
                            <?php foreach ($top_accessories as $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                               <div class="product">
                                  <div class="product-img">
-                                    <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                                    <img src="<?= $img->img ?>" alt="">
                                     <div class="product-label">
                                        <?php if ($product->state == 1): ?>
                                           <span class="sale">-30%</span>
@@ -584,8 +584,8 @@ $this->params['word'] = '';
                                  <div class="product-body">
                                     <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                                     <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                                    <h4 class="product-price">$<?= $product->price ?>.00
-                                       <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                                    <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                       <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                                     </h4>
                                     <div class="product-rating">
                                        <?php for ($i = 0; $i < 5; $i++): ?>
@@ -651,13 +651,13 @@ $this->params['word'] = '';
                      <?php foreach ($top_sell_laptops as $k => $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                         <div class="product-widget">
                            <div class="product-img">
-                              <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                              <img src="<?= $img->img ?>" alt="">
                            </div>
                            <div class="product-body">
                               <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                               <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                              <h4 class="product-price">$<?= $product->price ?>.00
-                                 <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                              <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                 <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                               </h4>
                            </div>
                         </div>
@@ -682,13 +682,13 @@ $this->params['word'] = '';
                      <?php foreach ($top_sell_smartphones as $k => $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                         <div class="product-widget">
                            <div class="product-img">
-                              <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                              <img src="<?= $img->img ?>" alt="">
                            </div>
                            <div class="product-body">
                               <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                               <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                              <h4 class="product-price">$<?= $product->price ?>.00
-                                 <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                              <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                 <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                               </h4>
                            </div>
                         </div>
@@ -715,13 +715,13 @@ $this->params['word'] = '';
                      <?php foreach ($top_sell_cameras as $k => $product): $img = \common\models\ProductImages::GetOan($product->id) ?>
                         <div class="product-widget">
                            <div class="product-img">
-                              <img src="/admin/uploads/<?= $img->img ?>" alt="">
+                              <img src="<?= $img->img ?>" alt="">
                            </div>
                            <div class="product-body">
                               <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                               <h3 class="product-name"><a href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                              <h4 class="product-price">$<?= $product->price ?>.00
-                                 <del class="product-old-price">$<?= $product->big_price ?>.00</del>
+                              <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                 <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                               </h4>
                            </div>
                         </div>
