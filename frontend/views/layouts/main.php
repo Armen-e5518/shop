@@ -9,7 +9,7 @@ use yii\helpers\Html;
 
 Yii::$app->language = 'en-US';
 AppAsset::register($this);
-$categories = \common\models\Categories::find()->all();
+$categories = \common\models\Categories::findAll(['parent_id' => null]);
 $cook = \Yii::$app->request->cookies->get('favorites');
 $carts = \Yii::$app->request->cookies->get('carts');
 $cook_count = $cook ? count($cook->value) : 0;
@@ -58,7 +58,7 @@ $carts = $carts ? $carts->value : [];
     <div id="top-header">
         <div class="container">
             <ul class="header-links pull-left">
-                <li><a href="tel:+37494322396"><i class="fa fa-phone"></i>+37494-32-23-96 <?=Yii::t('app','dev')?></a></li>
+                <li><a href="tel:+37494322396"><i class="fa fa-phone"></i>+37494-32-23-96 <?= \Yii::t('app', 'dev') ?></a></li>
                 <li><a href="mailto:armen5518@gmail.com"><i class="fa fa-envelope-o"></i>armen5518@gmail.com</a></li>
                 <li><a target="_blank"
                        href="https://www.google.com/maps/place/%D0%9E%D0%BF%D0%B5%D1%80%D0%BD%D1%8B%D0%B9+%D1%82%D0%B5%D0%B0%D1%82%D1%80/@40.1860722,44.5162101,18z/data=!4m5!3m4!1s0x406abce217b8839d:0x80bc65ebce1f70f!8m2!3d40.1858221!4d44.5150673"><i
@@ -184,18 +184,27 @@ $carts = $carts ? $carts->value : [];
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
-
-                <li class="<?= !empty($this->params['menu']) && $this->params['menu'] == 'home' ? 'active' : '' ?>"><a
-                            href="/">Home</a></li>
-                <li class="<?= !empty($this->params['menu']) && $this->params['menu'] == 'shop' ? 'active' : '' ?>"><a
-                            href="/site/store">Shop</a></li>
-                <!--            <li><a href="#">Categories</a></li>-->
-                <!--            <li><a href="#">Laptops</a></li>-->
-                <!--            <li><a href="#">Smartphones</a></li>-->
-                <!--            <li><a href="#">Cameras</a></li>-->
-                <!--            <li><a href="#">Accessories</a></li>-->
+                <?php foreach ($categories as $category): ?>
+                    <li class=""><a data-for="<?= $category->name . '_' . $category->id ?>"><?= $category->name ?></a></li>
+                <?php endforeach; ?>
             </ul>
             <!-- /NAV -->
+        </div>
+        <div id="sub-menu-block">
+            <?php foreach ($categories as $category): $sub_cats = \common\models\Categories::findAll(['parent_id' => $category->id]) ?>
+                <div class="sun-menu <?= $category->name . '_' . $category->id ?>" style="display: none">
+                    <?php foreach ($sub_cats as $sub_cat): $sub_sub_cats = \common\models\Categories::findAll(['parent_id' => $sub_cat->id]) ?>
+                        <div class="sub-menu-item">
+                            <h4><?= $sub_cat->name ?></h4>
+                            <ul>
+                                <?php foreach ($sub_sub_cats as $sub_sub_cat): ?>
+                                    <li><a href="/store/<?= $sub_sub_cat->id ?>"><?= $sub_sub_cat->name ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endforeach; ?>
         </div>
         <!-- /responsive-nav -->
     </div>

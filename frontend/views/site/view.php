@@ -1,6 +1,9 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $product common\models\Products */
+/* @var $comments common\models\ProductComments */
+/* @var $images */
 
 $this->title = 'Product';
 $this->params['breadcrumbs'][] = $this->title;
@@ -75,7 +78,7 @@ $this->params['menu'] = 'shop';
                     </div>
                     <div>
                         <p><?=\frontend\helper\Price::getNormalPrice($product->price) ?></p>
-                        <h3 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price) ?>
+                        <h3 class="product-price"><?=Yii::$app->params['currency']?><?= \frontend\helper\Price::getNormalPrice($product->price) ?>
                             <del class="product-old-price">
                                 $<?= \frontend\helper\Price::getBigPrice($product->price) ?></del>
                         </h3>
@@ -317,8 +320,8 @@ $this->params['menu'] = 'shop';
                             <p class="product-category"><?= \common\models\Categories::GetName($product->category_id) ?></p>
                             <h3 class="product-name"><a
                                         href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a></h3>
-                            <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
-                                <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
+                            <h4 class="product-price"><?=Yii::$app->params['currency']?><?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                <del class="product-old-price"><?=Yii::$app->params['currency']?><?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                             </h4>
                             <div class="product-rating">
                                 <?php for ($i = 0; $i < 5; $i++): ?>

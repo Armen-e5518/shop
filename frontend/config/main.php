@@ -12,6 +12,8 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'homeUrl' => '/',
+    'language' => 'en-US',
+    'sourceLanguage' => 'en-US',
     'components' => [
         'request' => [
             'baseUrl' => '',
@@ -43,6 +45,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'store/<cat_id:\d+>' => 'site/store',
             ],
         ],
         'socialShare' => [
@@ -53,6 +56,21 @@ return [
                 ]
             ],
         ],
+
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    //'basePath' => '@app/messages',
+                    //'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
+
     ],
     'params' => $params,
 ];

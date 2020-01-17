@@ -30,7 +30,6 @@ $imgs = \common\models\ProductImages::GetImgs($model->id);
             <?= $form->field($model, 'brend_id')->dropDownList(\common\models\Brend::GetAll(), []) ?>
             <?= $form->field($model, 'stars')->textInput() ?>
             <?= $form->field($model, 'price')->textInput() ?>
-            <?= $form->field($model, 'big_price')->textInput() ?>
             <?= $form->field($model, 'state')->dropDownList([
                 'No action',
                 '-30 %',

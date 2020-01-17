@@ -29,7 +29,6 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'price') ?>
 
-    <?php // echo $form->field($model, 'big_price') ?>
 
     <?php // echo $form->field($model, 'state') ?>
 

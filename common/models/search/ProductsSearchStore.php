@@ -31,7 +31,7 @@ class ProductsSearchStore extends Products
    }
 
 
-   public function search($params)
+   public function search($params,$cat_id)
    {
 
       $query = Products::find();
@@ -47,7 +47,7 @@ class ProductsSearchStore extends Products
            $this->brends = [];
        }
       $query->andFilterWhere([
-         'category_id' => $this->categories,
+         'category_id' => $cat_id,
          'brend_id' => $this->brends,
       ]);
       $query->andFilterWhere(['>', 'price', $this->price_from])

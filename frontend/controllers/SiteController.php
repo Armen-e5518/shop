@@ -87,18 +87,18 @@ class SiteController extends Controller
       $cook = \Yii::$app->request->cookies->get('favorites');
       return $this->render('index', [
 
-         'laptops' => Products::findAll(['category_id' => 14]),
-         'smartphones' => Products::find()->where(['category_id' => 15])->limit($limit)->all(),
-         'cameras' => Products::find()->where(['category_id' => 16])->limit($limit)->all(),
+         'laptops' => Products::findAll(['category_id' => 17]),
+         'smartphones' => Products::find()->where(['category_id' => 18])->limit($limit)->all(),
+         'cameras' => Products::find()->where(['category_id' => 17])->limit($limit)->all(),
          'accessories' => Products::find()->where(['category_id' => 17])->limit($limit)->all(),
 
-         'top_laptops' => Products::find()->where(['category_id' => 15])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
+         'top_laptops' => Products::find()->where(['category_id' => 17])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
          'top_smartphones' => Products::find()->where(['category_id' => 18])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
-         'top_cameras' => Products::find()->where(['category_id' => 19])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
-         'top_accessories' => Products::find()->where(['category_id' => 20])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
+         'top_cameras' => Products::find()->where(['category_id' => 17])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
+         'top_accessories' => Products::find()->where(['category_id' => 18])->orderBy(['stars' => SORT_DESC])->limit($limit)->all(),
 
-         'top_sell_laptops' => Products::find()->where(['category_id' => 13])->orderBy(['buy_count' => SORT_DESC])->limit($limit)->all(),
-         'top_sell_smartphones' => Products::find()->where(['category_id' => 14])->orderBy(['buy_count' => SORT_DESC])->limit($limit)->all(),
+         'top_sell_laptops' => Products::find()->where(['category_id' => 18])->orderBy(['buy_count' => SORT_DESC])->limit($limit)->all(),
+         'top_sell_smartphones' => Products::find()->where(['category_id' => 17])->orderBy(['buy_count' => SORT_DESC])->limit($limit)->all(),
          'top_sell_cameras' => Products::find()->where(['category_id' => 18])->orderBy(['buy_count' => SORT_DESC])->limit($limit)->all(),
 
          'favorites' => $cook ? (array)$cook->value : [],
@@ -181,10 +181,10 @@ class SiteController extends Controller
       ]);
    }
 
-   public function actionStore()
+   public function actionStore($cat_id)
    {
       $searchModel = new ProductsSearchStore();
-      $query = $searchModel->search(Yii::$app->request->queryParams);
+      $query = $searchModel->search(Yii::$app->request->queryParams,$cat_id);
       $countQuery = clone $query;
       $total_count = $countQuery->count();
       $cook = \Yii::$app->request->cookies->get('favorites');

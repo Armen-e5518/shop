@@ -51,46 +51,8 @@ $this->params['menu'] = 'shop';
                             echo  $r;
                         }?>
                     </div>
-                    <div class="checkbox-filter">
-
-                        <?php foreach ($categories as $category): ?>
-                            <div class="input-checkbox">
-                                <input type="checkbox" name="ProductsSearchStore[categories][]"
-                                       <?= in_array($category->id, $search->categories) ? 'checked' : '' ?>
-                                       value="<?= $category->id ?>"
-                                       id="category-<?= $category->id ?>">
-                                <label for="category-<?= $category->id ?>">
-                                    <span></span>
-                                    <?= $category->name ?>
-                                    <small>(<?= \common\models\Products::GetCountByCatId($category->id) ?>)</small>
-                                </label>
-                            </div>
-                        <?php endforeach; ?>
-
-
-                    </div>
                 </div>
                 <!-- /aside Widget -->
-                <!--              aside Widget -->
-                <div class="aside">
-                    <h3 class="aside-title">Brand</h3>
-                    <div class="checkbox-filter">
-                        <?php foreach ($brends as $brend): ?>
-                            <div class="input-checkbox">
-                                <input type="checkbox" name="ProductsSearchStore[brends][]"
-                                       <?= in_array($brend->id, $search->brends) ? 'checked' : '' ?>
-                                       value="<?= $brend->id ?>"
-                                       id="brend-<?= $brend->id ?>">
-                                <label for="brend-<?= $brend->id ?>">
-                                    <span></span>
-                                    <?= $brend->name ?>
-                                    <small>(<?= \common\models\Products::GetCountByBrId($brend->id) ?>)</small>
-                                </label>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-                <!--              /aside Widget-->
                 <!-- aside Widget -->
                 <div class="aside">
                     <h3 class="aside-title">Price</h3>
@@ -126,8 +88,8 @@ $this->params['menu'] = 'shop';
                                 <p class="product-category">Category</p>
                                 <h3 class="product-name"><a href="/site/view?id=<?= $top->id ?>"><?= $top->name ?></a>
                                 </h3>
-                                <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($top->price) ?>
-                                    <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($top->price) ?></del>
+                                <h4 class="product-price"><?=Yii::$app->params['currency']?><?= \frontend\helper\Price::getNormalPrice($top->price) ?>
+                                    <del class="product-old-price"><?=Yii::$app->params['currency']?><?= \frontend\helper\Price::getBigPrice($top->price) ?></del>
                                 </h4>
                             </div>
                         </div>
@@ -190,8 +152,8 @@ $this->params['menu'] = 'shop';
                                         <h3 class="product-name"><a
                                                     href="/site/view?id=<?= $product->id ?>"><?= $product->name ?></a>
                                         </h3>
-                                        <h4 class="product-price">$<?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
-                                            <del class="product-old-price">$<?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
+                                        <h4 class="product-price"><?=Yii::$app->params['currency']?><?= \frontend\helper\Price::getNormalPrice($product->price)  ?>
+                                            <del class="product-old-price"><?=Yii::$app->params['currency']?><?= \frontend\helper\Price::getBigPrice($product->price)  ?></del>
                                         </h4>
                                         <div class="product-rating">
                                             <?php for ($i = 0; $i < 5; $i++): ?>

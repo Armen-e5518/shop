@@ -629,12 +629,10 @@ textarea.input {
 	Main nav
 \*----------------------------*/
 
-.main-nav>li+li {
-  margin-left: 30px
-}
+
 
 .main-nav>li>a {
-  padding: 20px 0px;
+  padding: 0;
 }
 
 .main-nav>li>a:hover, .main-nav>li>a:focus, .main-nav>li.active>a {

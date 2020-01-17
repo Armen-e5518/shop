@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'description:ntext',
             'stars',
             'price',
-            'big_price',
+
             'state',
             'views',
             'buy_count',

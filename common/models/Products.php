@@ -15,7 +15,6 @@ use yii\web\UploadedFile;
  * @property string $description
  * @property int $stars
  * @property int $price
- * @property int $big_price
  * @property int $state
  * @property int $views
  * @property int $buy_count
@@ -57,9 +56,9 @@ class Products extends \yii\db\ActiveRecord
     {
         return [
 //         [['imageFiles'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 4],
-            [['category_id', 'brend_id', 'stars', 'price', 'big_price', 'state', 'views', 'buy_count','article'], 'integer'],
+            [['category_id', 'brend_id', 'stars', 'price', 'state', 'views', 'buy_count','article'], 'integer'],
             [['text', 'description','url'], 'string'],
-            [['name','error_info','sizes','color','composition'], 'string', 'max' => 255],
+            [['name','error_info','sizes','color','composition'], 'string'],
         ];
     }
 
@@ -95,7 +94,6 @@ class Products extends \yii\db\ActiveRecord
             'description' => 'Description',
             'stars' => 'Stars',
             'price' => 'Price',
-            'big_price' => 'Big Price',
             'state' => 'State',
             'views' => 'Views',
             'buy_count' => 'Buy Count',

@@ -5,6 +5,7 @@ namespace backend\controllers;
 use common\models\ProductImages;
 use common\models\Products;
 use common\models\search\ProductsSearch;
+use common\models\Urls;
 use frontend\helper\Helper;
 use Yii;
 use yii\filters\AccessControl;
@@ -12,6 +13,7 @@ use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;
+use function frontend\helper\get_http_response_code;
 
 /**
  * ProductsController implements the CRUD actions for Products model.
@@ -89,13 +91,41 @@ class ProductsController extends Controller
          'model' => $model,
       ]);
    }
+    public function get_http_response_code($url) {
+        $headers = get_headers($url);
+        return substr($headers[0], 9, 3);
+    }
 
     public function actionAdd()
     {
+
+        $urls = Urls::find()->where(['status' => 0])->all();
+
+        foreach ($urls as $url) {
+            $url_loc = $url->url;
+            if($this->get_http_response_code($url_loc) != "200"){
+                $m = Urls::findOne($url->id);
+                $m->status = 99;
+                $m->save();
+            }else{
+                Helper::getData($url_loc);
+                $m = Urls::findOne($url->id);
+                $m->status = 1;
+                $m->save();
+            }
+        }
+
         $model = new Products();
+        Helper::getData('https://www.wildberries.am/catalog/detyam/odezhda/dlya-devochek/bele');
+        die;
         if($model->load(Yii::$app->request->post())){
-            echo  $model->url;
-            Helper::getData($model->url);
+            $m = Urls::findOne(['url'=>$model->url]);
+            if (empty($m) && $m['status'] == 1) {
+                Helper::getData($model->url);
+                $url = new Urls();
+                $url->url = $model->url;
+                $url->save();
+            }
         }
         return $this->render('add', [
             'model' => $model,

@@ -2,6 +2,8 @@
 
 namespace common\models;
 
+use frontend\helper\Img;
+
 /**
  * This is the model class for table "product_images".
  *
@@ -41,6 +43,14 @@ class ProductImages extends \yii\db\ActiveRecord
          'img' => 'Image ',
       ];
    }
+
+    /**
+     * @return int
+     */
+    public function getSmImg()
+    {
+        return Img::getSmImg($this->img) ;
+    }
 
    public static function GetImgs($id)
    {

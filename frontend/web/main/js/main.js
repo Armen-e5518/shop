@@ -394,4 +394,23 @@
     $('.product').click(function () {
         window.location.href = $(this).find('.product-name a').attr('href')
     })
+
+    $('ul.main-nav li a').hover(function () {
+        $('#sub-menu-block').show();
+        var how = '.' + $(this).attr('data-for');
+        $('ul.main-nav li').removeClass('hover');
+        $(this).closest('li').addClass('hover');
+        $('.sun-menu').hide();
+        $(how).show()
+    });
+    $('ul.main-nav li a').click(function () {
+        var how = '.' + $(this).attr('data-for');
+        $('.sun-menu').hide();
+        $(how).show()
+    });
+
+    $('.section, header').on('mouseout', function () {
+        $('.sun-menu').hide();
+        $('#sub-menu-block').hide();
+    })
 })(jQuery);
